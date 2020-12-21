@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <style>
+      .slider_container{
+        width: 500px;
+        overflow: hidden;
+        position:relative;
+        counter-reset: slides_css;
+      }
+      .imagen{
+        display: inline-block;
+        left: -100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom:0;
+        width: 100%;
+        transition: .4s;
+        z-index: 0;
+        min-height: 500px;
+
+        background-size: cover;
+        background-position: center;
+      }
+      .slider_container input:checked + div{
+        left: 0;
+        width: 100%;
+        z-index: 1;
+        position:relative;
+      }
+    .slider_container input:checked + div ~ div{left:100%;}
+
+
+    /*Labels*/
+    input{position:fixed;top:0;left:100%;}
+    label{width:50px;height:50px;background:red;left:0;position:absolute;top:20px;z-index:2;top:150px;cursor: pointer;}
+    input:checked ~ label{display:none;}
+    input:checked + div + label + input + div + label{display:block;left:auto;right:0;}
+    input:first-of-type:checked ~ label:nth-last-of-type(2){display:block;}
+    input:last-of-type:checked ~ label:last-of-type{display:block;left:auto;right:0;}
+
+    </style>
+  </head>
+  <body>
+
+    <div class="slider_container">
+
+      <input type="radio" name="slider" id="slide1" checked/>
+      <div class="imagen" style="background-image:url('http://www.korocantabrana.com/wp-content/uploads/2016/02/5.-El-primero-N-1--300x250.png');height:700px;"></div>
+      <label for="slide1">One</label>
+
+      <input type="radio" name="slider" id="slide2"/>
+      <div class="imagen" style="background-image:url('https://biblioteca.acropolis.org/wp-content/uploads/2015/08/2.png');height:560px;"></div>
+      <label for="slide2">Two</label>
+
+      <input type="radio" name="slider" id="slide3"/>
+      <div class="imagen" style="background-image:url('https://us.123rf.com/450wm/wimcia1978/wimcia19781404/wimcia1978140400354/27671847-numero-3-con-diseno-realista-de-la-lampara.jpg');"></div>
+      <label for="slide3">Three</label>
+
+      <input type="radio" name="slider" id="slide4"/>
+      <div class="imagen" style="background-image:url('https://biblioteca.acropolis.org/wp-content/uploads/2015/08/4.png');"></div>
+      <label for="slide4">Four</label>
+
+      <input type="radio" name="slider" id="slide5"/>
+      <div class="imagen" style="background-image:url('https://image.shutterstock.com/image-vector/cartoon-number-five-character-600w-1122231491.jpg');"></div>
+      <label for="slide5">Five</label>
+
+      <label for="slide1">One</label>
+
+    </div>
+
+
+  </body>
+</html>
