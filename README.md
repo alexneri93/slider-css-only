@@ -1,7 +1,6 @@
-# Parallax effect - Mouseover
+# Slider - CSS Only
 
-How to make a parallax effect when you move the cursor in the screen.
-I used JS and CSS to attain that.
+Slider made only with CSS and HTML
 
 ## Getting Started
 
